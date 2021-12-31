@@ -5,8 +5,8 @@ Summary:	The intelligent ops toolkit for openEuler
 License:	MulanPSL2
 URL:		https://gitee.com/openeuler/A-Ops
 Source0:	%{name}-%{version}.tar.gz
-Source1:	A-Ops-web-node-modules.tar.gz
-patch0001:	0001-fix-diag-return.patch
+# Source1:	A-Ops-web-node-modules.tar.gz
+# patch0001:	0001-fix-diag-return.patch
 
 
 # build for gopher
@@ -18,10 +18,9 @@ BuildRequires:  python3-setuptools python3-connexion python3-werkzeug python3-li
 BuildRequires:	git python3-devel systemd
 
 # build for spider & aops basic module
-BuildRequires:  python3-setuptools python3-kafka-python python3-connexion
 
 # build for web
-BuildRequires: nodejs node-gyp nodejs-yarn
+BuildRequires: nodejs  nodejs-yarn
 
 %description
 The intelligent ops toolkit for openEuler
@@ -166,10 +165,10 @@ website for A-Ops, deployed by Nginx
 %define debug_package %{nil}
 
 %prep
-%setup
-%setup -T -D -a 1
-%patch0001 -p1
-cp -r A-Ops-web-node-modules/node_modules aops-web/
+%autosetup -p1
+# setup -T -D -a 1
+#patch0001 -p1
+#cp -r A-Ops-web-node-modules/node_modules aops-web/
 
 %build
 # build for aops-utils
@@ -235,6 +234,7 @@ popd
 
 #build for aops-web
 pushd aops-web
+yarn install
 yarn build
 popd
 
