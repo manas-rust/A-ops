@@ -77,7 +77,7 @@ website for A-Ops, deployed by Nginx
 %define debug_package %{nil}
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1
 # setup -T -D -a 1
 #patch0001 -p1
 #cp -r A-Ops-web-node-modules/node_modules aops-web/
