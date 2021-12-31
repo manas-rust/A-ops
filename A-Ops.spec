@@ -11,7 +11,7 @@ Source0:	%{name}-%{version}.tar.gz
 
 # build for gopher
 BuildRequires:	cmake gcc-c++ yum elfutils-devel clang >= 10.0.1 llvm libconfig-devel
-BuildRequires:	librdkafka-devel libmicrohttpd-devel
+BuildRequires:	libmicrohttpd-devel
 
 # build for ragdoll & aops basic module
 BuildRequires:  python3-setuptools  python3-werkzeug python3-libyang
