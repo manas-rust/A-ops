@@ -14,7 +14,7 @@ BuildRequires:	cmake gcc-c++ yum elfutils-devel clang >= 10.0.1 llvm libconfig-d
 BuildRequires:	librdkafka-devel libmicrohttpd-devel
 
 # build for ragdoll & aops basic module
-BuildRequires:  python3-setuptools python3-connexion python3-werkzeug python3-libyang
+BuildRequires:  python3-setuptools  python3-werkzeug python3-libyang
 BuildRequires:	git python3-devel systemd
 
 # build for spider & aops basic module
